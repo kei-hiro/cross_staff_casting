@@ -1,0 +1,140 @@
+@charset 'UTF-8';
+
+/* Slider */
+.slick-loading .slick-list {
+    background: #fff url('./ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('./fonts/slick.eot');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+}
+
+/* Arrows */
+
+.slick-arrow {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0;
+    width: 110px;
+    height: 110px;
+    color: transparent;
+    z-index: 1;
+    transition: opacity 0.5s;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.slick-arrow:hover {
+    opacity: 0.7;
+}
+
+/* 共通設定 */
+
+.slick-next::before,
+.slick-next::after,
+.slick-prev::before,
+.slick-prev::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.slick-next::after,
+.slick-prev::after {
+    width: 26px;
+    height: 26px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* next */
+
+.slick-next {
+    right: -200px;
+}
+
+.slick-next::after {
+    right: 44px;
+    transform: rotate(45deg);
+}
+
+/* prev */
+
+.slick-prev {
+    left: -200px;
+}
+
+.slick-prev::after {
+    left: 44px;
+    transform: rotate(-135deg);
+}
+
+@media screen and (max-width: 767px) {
+
+    .slick-next::after,
+    .slick-prev::after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slick-next {
+        right: 8px;
+    }
+
+    .slick-prev {
+        left: 8px;
+    }
+
+    .slick-next::after {
+        right: 2px;
+    }
+}
+
+/* Dots */
+.slide-dots {
+    position: absolute;
+    bottom: -70px;
+    left: -25%;
+    display: flex;
+    width: 150%;
+    max-width: 546px;
+}
+
+.slide-dots li button {
+    background: transparent;   
+    border:0;   
+    font-size: 0pt; 
+}
+
+.slide-dots li{
+    margin: 25px 6px;
+    width: 40px;
+    height: 6px;
+    background-color: #fff;
+}
+
+.slide-dots li button:before {
+    content: '';
+    width: 40px;
+    height: 6px;
+    background: #fff;
+    opacity: 1;
+    z-index: 1000;
+}
+
+.slide-dots li.slick-active button:before {
+    background: #000;
+}
